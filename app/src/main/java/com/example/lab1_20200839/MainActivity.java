@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.MenuItem;
@@ -12,32 +13,33 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private TextView titleTextView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        registerForContextMenu((TextView) findViewById(R.id.textBienvenido));
+        titleTextView = findViewById(R.id.textAhorcado);
+        registerForContextMenu(titleTextView);
     }
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo){
         super.onCreateContextMenu(menu,v,menuInfo);
         getMenuInflater().inflate(R.menu.menu_context, menu);
     }
+
     @Override
     public boolean onContextItemSelected(@NonNull MenuItem item) {
-        // Manejar la selección de color del menú contextual
-        switch (item.getItemId()) {
-            case R.id.menu_blue:
-                title.setTextColor(getResources().getColor(R.color.blue));
-                return true;
-            case R.id.menu_green:
-                titleTextView.setTextColor(getResources().getColor(R.color.green));
-                return true;
-            case R.id.menu_red:
-                titleTextView.setTextColor(getResources().getColor(R.color.red));
-                return true;
-            default:
-                return super.onContextItemSelected(item);
+        if (item.getItemId() == R.id.option_blue) {
+            titleTextView.setTextColor(Color.BLUE);
+            return true;
+        } else if (item.getItemId() == R.id.option_red) {
+            titleTextView.setTextColor(Color.RED);
+            return true;
+        } else if (item.getItemId() == R.id.option_green) {
+            titleTextView.setTextColor(Color.GREEN);
+            return true;
+        } else {
+            return super.onContextItemSelected(item);
         }
     }
 
