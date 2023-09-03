@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -42,5 +43,10 @@ public class MainActivity extends AppCompatActivity {
             return super.onContextItemSelected(item);
         }
     }
+    public void jugar(View view){
+        Intent intent = new Intent(this, MainActivity2.class);
+        startActivity(intent);
+    }
+
 
 }
