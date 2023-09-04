@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#BAD5D2"
+    tools:context=".Statistics">
+
+    <TextView
+        android:id="@+id/textTittleStat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/tahitisansd"
+        android:text="Estadisticas"
+        android:textColor="#132481"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.096" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textTittleStat"
+        app:layout_constraintBottom_toTopOf="@+id/buttonJuegarStats">
+
+        <TextView
+            android:id="@+id/textStats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/tahitisansd"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+    </ScrollView>
+    <Button
+        android:id="@+id/buttonJuegrStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/tahitisansd"
+        android:text="Nuevo Juego"
+        android:textSize="25sp"
+        android:onClick="iniciarJuego"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTittleStat" />
+</androidx.constraintlayout.widget.ConstraintLayout>
